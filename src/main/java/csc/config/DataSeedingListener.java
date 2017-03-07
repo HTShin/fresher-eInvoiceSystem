@@ -96,6 +96,6 @@ public class DataSeedingListener implements ApplicationListener<ContextRefreshed
 		cus.setLimitConsume(BigDecimal.valueOf(1234));
 		customerRepository.save(cus);
 
-	}
+	} 
 
 }
