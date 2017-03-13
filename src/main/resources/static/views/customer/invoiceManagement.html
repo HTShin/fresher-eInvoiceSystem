@@ -15,65 +15,98 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8">
+                     <div class="agile-grids">    
+		    <div class="agile-tables">
+		        <div class="page-title">
+		            <div class="title_left">
+		                <h3>Account List</h3>
+		            </div>		            
+		        </div>
+		
+		        <div class="pull-left">
+		            <h5>
+		                <span class="field-validation-error" id="error_message">
+		                </span>
+		            </h5>
+		        </div>
+		
+		        <div id="list">
+		            <list-invoice></list-invoice>
+		        </div>        
+		    </div>
+		</div>
                          <div class="dropdown">
                          <button class="dropdown-toggle btn btn-primary" data-toggle="dropdown">Select Invoice Type</button>
                         <ul class="dropdown-menu">
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Electric Bill</a>
+                        <li  ng-click="showEBForm()"  >
+                           <span ><i class="fa fa-fw fa-gear" ></i>Electric Bill</span>
+                        </li >
+                        <li ng-click="showWBForm()"  >
+                             <span ><i class="fa fa-fw fa-gear" ></i>Water Bill</span>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Water Bill</a>
+                        <li  ng-click="showIBForm()" >
+                             <span ><i class="fa fa-fw fa-gear" ></i> Internet Bill</span>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Internet Bill</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Phone Bill</a>                                           
+                        <li ng-click="showPBForm()" >
+                             <span ><i class="fa fa-fw fa-gear" ></i>Phone Bill</span>                                       
                         </li>
                     </ul>
-                    
-                         <form id="myForm" name="myForm" role="form" style="margin-left:300px"  >
-                         <fieldset name="set" disabled>
+                    </div>
+                  
+                         <form id="myForm" name="myForm" role="form" style="margin-left:300px"  hidden>
+                          <br>
                             <div class="form-group" >
-                                <label style="font-weight:bold">Full Name</label>
-                                <input type="text" name="name"  class="form-control" placeholder="Your Name"  required />
-                                <p class="help-block">Tên lấy từ DB và có thể thay đổi</p>
+                                <label style="font-weight:bold">Contract Number</label>
+                                <input type="text" name="contract"  class="form-control" placeholder="Your Contract Number"   />                              
                             </div>
 
                             <div class="form-group">
-                                <label style="font-weight:bold">Email</label>
-                                <input type="email" name="email" class="form-control" placeholder="Your Email"  required/>
-                                <p class="help-block">Email lấy từ DB và có thể thay đổi</p>
+                                <label style="font-weight:bold">Date</label>
+                                <input type="date" name="date" class="form-control" placeholder="Date"  />
+                               
+                            </div>
+                            
+                            <div class="form-group" id="service">
+                                <label style="font-weight:bold">Name Service</label>
+                                <input type="text" name="service" class="form-control" placeholder="Your Service" hidden />
+                                                              
+                            </div>
+                            
+                            <div class="form-group" id="index">
+                                <label style="font-weight:bold">Index Consumed</label>
+                                <input type="number" name="index" class="form-control" placeholder="Your Index Consumed"   />
+                          
                             </div>
                             
                             <div class="form-group">
-                                <label style="font-weight:bold">Address</label>
-                                <input type="text" name="address" class="form-control" placeholder="Your Address"  required/>
-                                <p class="help-block">Nhập mới hoặc lấy từ DB và có thể thay đổi</p>
+                                <label style="font-weight:bold">Total</label>
+                                <input type="number" name="total" class="form-control" placeholder="Total" />
+                                
                             </div>
                             
                             <div class="form-group">
-                                <label style="font-weight:bold">Phone</label>
-                                <input type="number" name="phone" class="form-control" placeholder="Your Phone Number"   required/>
-                                <p class="help-block">Nhập mới hoặc lấy từ DB và có thể thay đổi</p>
-                            </div>
+                                <label style="font-weight:bold">VAT</label>
+                                <input type="number" name="vat" class="form-control" placeholder="VAT"  />
+                               
+                            </div>          
                             
-                            <div class="form-group">
-                                <label style="font-weight:bold">Tax Code</label>
-                                <input type="number" name="taxcode" class="form-control" placeholder="Your Tax-Code" required/>
-                                <p class="help-block">Nhập mới hoặc lấy từ DB và có thể thay đổi</p>
-                            </div>
+                            <div class="form-group" id="ptef">
+                                <label style="font-weight:bold">PTEF</label>
+                                <input type="number" name="ptef" class="form-control" placeholder="PTEF"  />
+                               
+                            </div> 
                             
-                            <div class="form-group">
-                                <label style="font-weight:bold">Your Limit Money </label>
-                                <input type="number" name="limit" class="form-control" placeholder="Your Limit Money"  required/>
-                                <p class="help-block">Nhập mới hoặc lấy từ DB và có thể thay đổi</p>
-                            </div>                                             
+                            <div class="form-group"  >
+                                <label style="font-weight:bold">Grand Total</label>
+                                <input type="number" name="ptef" class="form-control" placeholder="Grand Total"  />
+                               
+                            </div> 
+                                                 <div align="center">             
                             <button type="submit" name="btn" class="btn btn-primary" >Update</button>           
-                            </fieldset>             
+                                   </div>      
                         </form> 
 
-                    </div>
+                    
                     
                 </div>
                 <!-- /.row -->

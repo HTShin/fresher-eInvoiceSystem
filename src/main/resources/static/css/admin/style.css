@@ -44,6 +44,7 @@ a {
 }
 a:hover { transition: all 200ms ease-in-out; }
 
+
 .page-container {
   min-width: 1260px;
   position: relative;
@@ -307,7 +308,7 @@ li#menu-academico{
 }
 /*--header --*/
 .header-main {
-    padding:1em;
+    padding:0.5em;
 	background: #41b8f4;
 	 box-shadow: 0 1px 1px rgba(0,0,0,.05);
     -o-box-shadow: 0 1px 1px rgba(0,0,0,.05);
@@ -470,11 +471,12 @@ li.dropdown.head-dpdn {
 li.dropdown.head-dpdn a.dropdown-toggle {
    margin: 1em 1.9em;
 }
-ul.dropdown-menu li {
+ul.dropdown-menu li:hover {
     margin-left: 0;
     width: 100%;
     padding: 0;
 	background: #fff;
+	background-color: green;
 }
 .user-panel-top ul{
 	padding-left:0;
@@ -815,9 +817,10 @@ ul.dropdown-menu {
     min-width: 230px;
     top:101%;
 }
-.dropdown-menu > li > a {
+.dropdown-menu > li:hover > a {
     padding: 3px 15px;
 	font-size: 1em;
+	
 }
 .profile_details_drop .fa.fa-angle-up{
 	display:none;
@@ -5257,6 +5260,7 @@ span.prfil-img img {
 }
 .profile_details {
     padding: 0.28em 1em;
+    
 }
 .wthree-crd {
     padding-left: 0;

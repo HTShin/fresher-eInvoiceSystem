@@ -28,3 +28,9 @@ app.directive('userForm', function() {
 		templateUrl : "/EInvoice/views/admin/user-form.html"
 	}
 });
+
+app.directive('listInvoice', function() {
+	return {
+		templateUrl : "/EInvoice/views/customer/listInvoice.html"
+	}
+});

@@ -15,7 +15,7 @@ app.config(function($routeProvider) {
 		controller: 'CustomerController',
 	}).when("/invoice-manage", {
 		templateUrl : "/EInvoice/views/customer/invoiceManagement.html",
-		controller: 'CustomerController',
+		controller: 'InvoiceController',
 	}).when("/report-manage", {
 		templateUrl : "/EInvoice/views/customer/reportManagement.html",
 		controller: 'CustomerController',

@@ -1,0 +1,76 @@
+<form class="form-inline" style="margin-top: 20px">
+    <div class="form-group">
+        <label >Search</label>
+        <input type="text" ng-model="search" class="form-control" placeholder="Filter text...">
+    </div>
+    
+<!--     <div class="form-group" style="margin-left: 30px">
+        <label >Status</label>
+        <select ng-model="status" class="form-control">
+        	<option value="all">All</option>
+        	<option value="1">Active</option>
+        	<option value="0">Deactive</option>
+        </select>
+    </div>
+    
+    <button type="button" ng-click="ctrl.filterActive(status)"
+					class="btn btn-success custom-width" >Filter</button> -->
+</form>
+
+<table class="table table-hover" id="table-no-resize">
+	<thead>
+		<tr>
+			<th>Invoice Number</th>
+			<th>Type of Invoice</th>
+			<th>Date</th>
+			<th>Grand Total</th>		
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="u in ctrl.invoice|filter:search"> <!-- |startFrom:currentPage*pageSize | limitTo:pageSize -->
+			<td><span ng-bind="u.contract_number"></span></td>
+			<td><span ng-bind="u.name_invoice"></span></td>
+			<td>
+			<span ng-bind="u.date"></span>
+				<!--<label style="display: flex" for="id{{u.id}}"><input type="checkbox" value="" name="checked"  ng-model="u.active" id="id{{u.id}}"
+					class="form-control ng-dirty ng-valid-parse" ng-checked="u.active==1 ? 1 : 0" 
+					ng-click="u.active=!u.active" ng-change="u.active=!u.active"
+					/>
+					<span ng-show="u.active==true" >Active</span><span ng-show="u.active==false" >Deactive</span>
+				</label>-->
+			</td>
+			
+			<td>
+			<span ng-bind="u.total"></span>
+<!-- 				<button type="button" ng-click="ctrl.edit(u.id)" -->
+<!-- 					class="btn btn-success custom-width" >Edit</button>
+					<button type="button" ng-click="ctrl.update(u,u.id)"
+					class="btn btn-success custom-width" >Update</button> -->
+				
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<form class="form-inline" style="margin-top: 20px">
+    <div class="form-group">
+    	<label >Page size</label>
+        <select ng-model="pageSize" id="pageSize" name="pageSize" ng-init="pageSize = '5'" class="form-control" ng-change="onEventPaging(pageSize)">
+		    <option value="5" >Show 5 per page</option>
+		    <option value="10" >Show 10 per page</option>
+		    <option value="15" >Show 15 per page</option>
+		    <option value="20" >Show 20 per page</option>
+		 </select>
+    </div>
+    
+    <div class="form-group" style="margin-left: 30px">
+        <button class="btn btn-success custom-width" ng-disabled="currentPage == 0" ng-click="onEventPreCurrentPage()">Previous</button>
+    	{{currentPage+1}}/{{numberOfPages()}}
+    	<button class="btn btn-success custom-width" ng-disabled="currentPage >= totalElements/pageSize - 1" ng-click="onEventNextCurrentPage()">Next</button>
+    </div>
+       
+</form>
+
+
+ 
+ 
