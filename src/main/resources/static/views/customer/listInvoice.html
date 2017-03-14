@@ -62,9 +62,9 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Modal Header</h4>
       </div>
-      <div class="modal-body">      <form id="myForm" name="btnForm" ng-submit="ctrl.submit()"
+      <div class="modal-body">      <form  name="btnForm" ng-submit="ctrl.submit()"
 								role="form"  >
-								<fieldset id="btnset" disabled>
+								<fieldset id="btnset" name="btnset" disabled>
 								<br> <input type="hidden" ng-model="ctrl.invoice.id" /> 
 								<div class="form-group">
 									<label style="font-weight: bold">Contract Number</label> <input
@@ -133,7 +133,7 @@
 									type="hidden" ng-model="ctrl.invoice.idCustomer" />
 </fieldset>
 								<div align="center">
-									<button type="submit" name="btn" class="btn btn-primary">Edit</button>
+									<button type="button"  name="btn" class="btn btn-primary" ng-click="myEnable()">Edit</button>
 								</div>
 
 							</form>

@@ -140,7 +140,7 @@ app.controller('InvoiceController', ['$scope','$filter', 'InvoiceService',
     function updateInvoice(invoice, id){    	
     	var r = confirm("Are you sure!");
     	if (r == true) {
-    		console.log(invoice);
+    		console.log(invoice);            
             InvoiceService.updateInvoice(invoice, id)
                 .then(
                 fetchAllInvoice,
@@ -172,6 +172,7 @@ app.controller('InvoiceController', ['$scope','$filter', 'InvoiceService',
             updateInvoice(self.invoice, self.invoice.id);
             console.log('User updated with id ', self.invoice.id);
         }
+        reset();
 
     }
 
@@ -227,12 +228,11 @@ app.controller('InvoiceController', ['$scope','$filter', 'InvoiceService',
     	    };
         $scope.myForm.$setPristine(); //reset Form
     }
-
+   
     
     $scope.showForm = function(code, id){
     	self.invoice.idType = id;   	    	   	
-    	$scope.name_type = id.nameInvoice;
-    	
+    	$scope.name_type = id.nameInvoice;    			
     	if(code == 'EB')
     	{
     		document.myForm.hidden = false;
@@ -262,9 +262,15 @@ app.controller('InvoiceController', ['$scope','$filter', 'InvoiceService',
     		document.getElementById('index').hidden = true;
     	} 		
     };
-    
- 
-}]);
+   
+   
+
+ $scope.myEnable = function(){
+    	
+    		document.getElementById('btnset').disabled = false;
+    		console.log('enabled form');
+        };
+    }]);
 
 
 app.filter('startFrom', function() {

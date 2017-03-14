@@ -11,6 +11,7 @@
 
 							data-toggle="dropdown">Create Invoice</button>
 						<ul class="dropdown-menu">
+							
 
 							<li ng-repeat="u in ctrl.typeInvoices"  data-toggle="modal" data-target="#myModal" ng-click="showForm(u.code, u)">
 								<i class="fa fa-fw fa-gear"><span ng-bind="u.nameInvoice"></span></i>
@@ -25,6 +26,7 @@
 						<div class="modal-dialog">
 						 <div class="modal-content">
 
+     
 
       <div class="modal-header"> <div id="title" align="center" style="font-weight:bold">{{name_type}}</div></div>
        <div class="modal-body">
